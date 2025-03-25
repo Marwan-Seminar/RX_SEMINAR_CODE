@@ -1,6 +1,6 @@
 #project files
-.classpath
-.project
+*.classpath
+*.project
 
 
 # Compiled class file
