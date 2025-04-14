@@ -19,11 +19,11 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 
  * Bauen Sie aus diesen eine Pipeline auf, die einen unendlichen Datenfluss verarbeiet.
  * 
- * In dem hier implementierten Rahmen ist die Pipeleine bereits aufgebaut.
+ * In dem unten vorgegebenen Rahmen ist die Pipeleine bereits aufgebaut.
  * 
  * Sie hat jedoch folgende zwei Fehler, die Sie beheben muessten:
  * 
- * a) 	In der Methode MySimpleSubscription.request() werden onNext() Aufrufe synchron abgesetzt, das f�hrt zu einem Stack Overflow.
+ * a) 	In der Methode MySimpleSubscription.request() werden onNext() Aufrufe synchron abgesetzt, das fuehrt zu einem Stack Overflow.
  * 		Dieses Verhalten widerspricht der Regel 3.3: Subscription.request MUST place an upper bound on possible synchronous recursion between Publisher and Subscriber.
  * 		
  * 		Beheben sie dies durch Nutzung eines Executors (das ist ein Thread-Pool)
@@ -39,13 +39,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class PipelineImplBase {
 	
 	
-	/* 	Shows Minimalsitic Implementation of jdk Flow Interfaces API for Slide
+	/* 	
+	 * Minimalistische Implementierung der jdk Flow Interfaces API.
 	 * 
-	 *  Alle drei Interfaces, Publisher, Subscriber, Subscription sind hier prototypisch implementiert.
-	 *  Sie folgen jedeoch nicht komplett dem erforderlichen Regelwerk.
+	 * Alle drei Interfaces, Publisher, Subscriber, Subscription sind hier prototypisch implementiert.
+	 * Sie folgen jedeoch nicht komplett dem erforderlichen Regelwerk.
 	 *  
-	 *  Diese Implemntierung dient nur zur Demonstration der Bezieuhungen untern den Interfaces, 
-	 *  die es erm�glichen eine Pipeline daraus zu bauen.
+	 * Diese Implemntierung dient nur zur Demonstration der Bezieuhungen untern den Interfaces, 
+	 * die es ermoeglichen eine Pipeline daraus zu bauen.
 	 *  
 	 *   see: JDK Example in concurrent.Flow Javadoc
 	 *   https://docs.oracle.com/javase/9/docs/api/java/util/concurrent/Flow.html
@@ -147,7 +148,7 @@ class MySimplePublisher implements Flow.Publisher<Integer>{
 	 		
 	 		
 	 		// TODO: Send numberOfNewitems items to the subscriber.
-	 		// naive approach below: subscriber.onNext(globalData) in a lool, can lead to stack-overflow
+	 		// naive approach below: subscriber.onNext(globalData) in a loop, can lead to stack-overflow
 	 		// Resolve this issue through introduction of a thread-pool
 	 		// You can use executor declared above.
 	 		for(int i = 0; i < numberOfNewitems; ++i) {

@@ -7,11 +7,11 @@ package seminar_reactive_streams.exercises.rx_1_standard.rx_1_1_minimal_stream_r
  * 
  * Bauen Sie einen einfachen Stream mit RxJava.
  * 
- * Ein Observable versendet die Zahlen 1-100, ein Subscriber empf�ngt sie, und schreibt sie auf die Shell.
+ * Ein Observable versendet die Zahlen 1-100, ein Subscriber empfaengt sie, und schreibt sie auf die Shell.
  * 
  * Hinweise: 
- * 	- Observable.range(1, 100) gibt ein Observable zur�ck, das das die Daten emittiert
- * 	- Observable.subscribe(System.out::printl) realieisert einen Subscriber, der die Daten auf die Shell schreibt.
+ * 	- Observable.range(1, 100) gibt ein Observable zurueck, das das die Daten emittiert
+ * 	- Observable.subscribe(System.out::printl) realisiert einen Subscriber, der die Daten auf die Shell schreibt.
  * 
  * Lernziel: Stream Programmierung kennenlernen
  */
@@ -32,6 +32,6 @@ public class MinimalStreamRx_Base {
 		
 		// TODO: Benutzen Sie Observable.range(1, 100); um eine Stream-Source zu erzeugen, die die Zahlen 1-100 emittiert
 		
-		// TODO melden Sie �ber den Methodenaufruf .subscribe(System.out::println); einen Subscriber an diese Source an.
+		// TODO melden Sie ueber den Methodenaufruf .subscribe(System.out::println); einen Subscriber an diese Source an.
 	}
 }

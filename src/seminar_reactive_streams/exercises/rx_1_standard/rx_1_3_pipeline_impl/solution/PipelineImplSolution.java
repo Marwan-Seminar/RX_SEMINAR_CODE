@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 
 /* 
- * Shows Minimalsitic Implementation of jdk Flow Interfaces API for Slide
+ *  Minimalistische Implementierung der jdk Flow Interfaces API
  *  
  * 
  *  Alle drei Interfaces, Publisher, Subscriber, Subscription sind hier prototypisch implementiert.

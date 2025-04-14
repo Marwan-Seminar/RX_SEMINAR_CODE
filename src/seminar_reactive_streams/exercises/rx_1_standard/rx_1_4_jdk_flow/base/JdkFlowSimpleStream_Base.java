@@ -12,7 +12,7 @@ public class JdkFlowSimpleStream_Base {
 		instance.simpleStream();
 		
 		
-		// TODO: Der SubmisstionPublisher läuft asyncrhon, daher muss man auf dessen Beendigung "warten", z.B. durch:
+		// TODO: Der SubmissionPublisher laeuft asynchron, daher muss man auf dessen Beendigung "warten", z.B. durch:
 		Thread.sleep(10000);
 		
 	}

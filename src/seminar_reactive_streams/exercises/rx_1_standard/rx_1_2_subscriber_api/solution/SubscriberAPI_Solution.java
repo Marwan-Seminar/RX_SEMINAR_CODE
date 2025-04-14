@@ -10,15 +10,16 @@ import io.reactivex.rxjava3.core.Flowable;
  * org.reactivestreams.Subscriber implementieren
  * 
  * Programmieren Sie einen Subscriber.
- * Implementieren Sie daf�r das Interface org.reactivestreams.Subscriber.
  * 
- * a) Subcribieren Sie Ihren Subscriber an ein RxJava Flowable.range(1,100)
+ * a) Implementieren Sie dafuer das Interface org.reactivestreams.Subscriber.
  * 
- * b) Zeigen Sie durch Shell-Ausgaben, wann welche Methoden aufgerufen werden. 
+ * b) Subscribieren Sie Ihren Subscriber an ein RxJava Flowable.range(1,100)
+ * 
+ * c) Zeigen Sie durch Shell-Ausgaben, wann welche Methoden aufgerufen werden. 
  * 
  * HINWEIS: 
- * 	- Sie m�ssen sich die Subscription �merken�, die im onSubscribe() Aufruf �bergeben wird
- *	- Sie m�ssen Subscription.request() aufrufen, damit Daten ausgesendet werden.
+ * 	- Sie muessen sich die Subscription "merken", die im onSubscribe() Aufruf uebergeben wird
+ *	- Sie muessen Subscription.request() aufrufen, damit Daten ausgesendet werden.
  *
  * Lernziel: Subscriber API und Lifecycle kennenlernen
  *
@@ -74,7 +75,7 @@ class MySimpleSubscriber implements Subscriber<Integer> {
 		subscription.request(1);
 		
 		// Dieses Vorgehen funktioniert zwar, ist aber nicht effizient. 
-		// Ein realer Subscriber w�rde einen Batch von Elementen bestellen. 
+		// Ein realer Subscriber wuerde einen Batch von Elementen bestellen. 
 				
 	}
 

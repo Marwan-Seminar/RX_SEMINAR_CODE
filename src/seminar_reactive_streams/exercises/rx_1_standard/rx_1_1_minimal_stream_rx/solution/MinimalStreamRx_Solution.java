@@ -7,11 +7,11 @@ import io.reactivex.rxjava3.core.Observable;
  * Einen ganz einfachen RxJava Stream bauen
  * 
  * 
- * Ein Observable versendet die Zahlen 1-100, ein Subscriber empf�ngt sie, und schreibt sie auf die Shell.
+ * Ein Observable versendet die Zahlen 1-100, ein Subscriber empfaengt sie, und schreibt sie auf die Shell.
  * 
  * Hinweise: 
- * 	- Observable.range(1, 100) gibt ein Observable zur�ck, das das die Daten emittiert
- * 	- Observable.subscribe(System.out::printl) realieisert einen Subscriber, der die Daten auf die Shell schreibt.
+ * 	- Observable.range(1, 100) gibt ein Observable zurueck, das das die Daten emittiert
+ * 	- Observable.subscribe(System.out::printl) realisiert einen Subscriber, der die Daten auf die Shell schreibt.
  * 
  * Lernziel: Stream Programmierung kennenlernen
  */
