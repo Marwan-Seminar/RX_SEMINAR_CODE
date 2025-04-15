@@ -3,18 +3,19 @@ package seminar_reactive_streams.exercises.rx_2_api.rx_2_2_multiple_subscribers.
 import io.reactivex.rxjava3.core.Observable;
 
 /*
- * Verzweigen Sie einen Stream, indem Sie mehrere Subscriber anmelden. Source ist z.B. Observable.generate(1, 100). 
+ * Verzweigen Sie einen Stream, indem Sie mehrere Subscriber anmelden. 
+ * Source ist z.B. Observable.generate(1, 100). 
  * 
  * 
  * a) In welcher Reihenfolge und in welchem Thread laufen die Subscriber ab?
  * 
- * b) Wie laufen die Subscriber, wenn sie subscribeOn() verwenden?
+ * b) Wie laufen die Subscriber, wenn Sie subscribeOn() verwenden?
  * 
- * L�sungshinweis: Um den Thread zu sehen, der einen Subscriber ausf�hrt:
+ * Loesungshinweis: Um den Thread zu sehen, der einen Subscriber ausfuehrt:
  * 
  * .subscribe(i ->  System.out.println("onNext() " +  i  + " " + Thread.currentThread()));
  * 
- * Lernziel: Nebenl�ufigkeitsverhalten von Streams und die  Wirkung von subscribeOn() kennenlernen
+ * Lernziel: Nebenlaeufigkeitsverhalten von Streams und die  Wirkung von subscribeOn() kennenlernen
  */
 public class MultipleSubscribersStream_Base {
 
@@ -50,9 +51,9 @@ public class MultipleSubscribersStream_Base {
 	}
 	
 	/*  
-	 *  b) Wie laufen die Subscriber, wenn sie subscribeOn() verwenden?
+	 *  b) Wie laufen die Subscriber, wenn Sie subscribeOn() verwenden?
 	 *  
-	 *  L�sungshinweis: sourceObservable.subscribeOn(Schedulers.computation())
+	 *  Loesungshinweis: sourceObservable.subscribeOn(Schedulers.computation())
 	 */
 	void b_two_subscribers_multithreaded() throws InterruptedException {
 		
