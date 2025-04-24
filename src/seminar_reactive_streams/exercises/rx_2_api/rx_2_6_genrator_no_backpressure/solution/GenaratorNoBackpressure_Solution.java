@@ -6,9 +6,9 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 
 /*
- * Schreiben Sie eine Source f�r einen Stream ohne Back-Pressure.
+ * Schreiben Sie eine Source fuer einen Stream ohne Backpressure.
  * 
- * a)	Schreiben Sie die Stream-Source mit Flowable.create(), der die Zahlen 1 bis 1_000_000 emittiert.
+ * a)	Schreiben Sie eine Stream-Source mit Flowable.create(), die Zahlen 1 bis 1_000_000 emittiert.
  * 
  * 
  * Programmierbeispiel
@@ -21,9 +21,10 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
  * 
  * 
  *  b) 	Zeigen Sie, dass diese Source  keinen Back-Pressure realisiert, 
- * 		selbst wenn Sie einen Parameter f�r die BackpressureStrategy �bergeben. 
+ * 		selbst wenn Sie einen Parameter fuer die BackpressureStrategy uebergeben. 
  * 
- * Lernziel: Stream Source ohne Back-Pressure erzeugen k�nnen
+ * Lernziel: Stream Source ohne Back-Pressure erzeugen koennen
+ * 
  */
 public class GenaratorNoBackpressure_Solution {
 
@@ -63,7 +64,7 @@ public class GenaratorNoBackpressure_Solution {
 			}
 		},
 		// BackpressureStrategy.DROP: alles ab 128 geht verloren
-		// BackpressureStrategy.BUFFER f�rht zu einem unendlichen Buffer		
+		// BackpressureStrategy.BUFFER fuerht zu einem unendlichen Buffer		
 		BackpressureStrategy.BUFFER); 
 						
 		source.subscribe(nextElement -> {
@@ -74,7 +75,7 @@ public class GenaratorNoBackpressure_Solution {
 	
 	/*
 	 *  b) 	Zeigen Sie, dass diese Source  keinen Back-Pressure realisiert, 
-	 *  	selbst wenn Sie einen Parameter f�r die BackpressureStrategy �bergeben. 
+	 *  	selbst wenn Sie einen Parameter fuer die BackpressureStrategy uebergeben. 
 	 *  
 	 *  Im Shell-Output wird sichtbar, dass der Erzeuger und der Subscriber immer
 	 *  weiter auseinander laufen.
@@ -90,7 +91,7 @@ public class GenaratorNoBackpressure_Solution {
 			}
 		},
 		// BackpressureStrategy.DROP: alles ab 128 geht verloren
-		// BackpressureStrategy.BUFFER f�hrt zu einem unendlichen Buffer		
+		// BackpressureStrategy.BUFFER fuehrt zu einem unendlichen Buffer		
 		BackpressureStrategy.BUFFER); 
 		
 		// Entkoppung der Downstream-Pipeline
