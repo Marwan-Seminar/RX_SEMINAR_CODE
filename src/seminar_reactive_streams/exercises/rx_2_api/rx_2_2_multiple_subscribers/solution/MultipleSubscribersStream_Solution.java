@@ -68,7 +68,7 @@ public class MultipleSubscribersStream_Solution {
 		
 		Observable<Integer> sourceObservable = Observable.range(1, 100);
 		
-		// Turn on Mutltithreading
+		// Turn on Multithreading
 		sourceObservable = sourceObservable.subscribeOn(Schedulers.computation());
 		
 		// 1. Subscriber

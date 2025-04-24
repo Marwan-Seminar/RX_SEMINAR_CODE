@@ -61,12 +61,12 @@ public class MultipleSubscribersStream_Base {
 		
 		Observable<Integer> sourceObservable = Observable.range(1, 100);
 		
-		// TODO:  Turn on Mutltithreading subscribeOn(...);
+		// TODO:  Turn on Multithreading subscribeOn(...);
 		
 		// TODO: 1. Subscriber
 		sourceObservable.subscribe();
 		
-		// TODO 2. Subscriber
+		// TODO: 2. Subscriber
 		
 		
 		
