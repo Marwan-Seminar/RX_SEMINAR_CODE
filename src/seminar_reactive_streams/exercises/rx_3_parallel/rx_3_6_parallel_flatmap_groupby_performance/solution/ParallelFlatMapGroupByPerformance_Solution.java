@@ -6,18 +6,21 @@ import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 /* 
- * Hier wird gezeigt, dass druch die Parallelisierung mit Verzweigen und Zusammenf�rheren auf Basis 
+ * Hier wird gezeigt, dass druch die Parallelisierung mit Verzweigen und Zusammenfuerheren auf Basis 
  * von groupBy() und flatMap() ein signifikanter Performance-Vorteil erzielt werden kann.
  * 
- * Der Stream ruft im Map-Schritt eine CPU-intensive Funtktion auf, die ca. 100 Millisekunden lang l�uft.
+ * Der Stream ruft im Map-Schritt eine CPU-intensive Funtktion auf, die ca. 100 Millisekunden lang laeuft.
  * 
  * Durch die Parallelisierung wird die Laufzeit ca. um den Faktor 4 auf einem Quadcore verringert.
  *   
- * Die L�sung  ist in drei Teile geliedert:
+ * Die Loesung  ist in drei Teile geliedert:
  * 
  * a) Der sequentielle Stream ohne Verzweigung (10 Sekunden)
- * b) Der Stream mit Verzweigung aber ohne Parallelit�t (10 Sekunden)
- * c) Der Stream mit Verzweigung und mit Parallelit�t (2 Sekunden)
+ * b) Der Stream mit Verzweigung aber ohne Parallelitaet (10 Sekunden)
+ * c) Der Stream mit Verzweigung und mit Parallelitaet (2 Sekunden)
+ * 
+ * Bemerkung: Die Zeitmessung ist in manchen Faellen nicht ganz akkurat,
+ * da die CPU-Load simulierende Methode ungenau sein kann, im Falle von Preemption.
  */
  public class ParallelFlatMapGroupByPerformance_Solution {
 	
@@ -32,11 +35,11 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 		//a) Der sequentielle Stream ohne Verzweigung
 		instance.a_serialStream();
 		
-		// b) Der Stream mit Verzweigung aber ohne Parallelit�t
+		// b) Der Stream mit Verzweigung aber ohne Parallelitaet
 		//instance.b_flapMapGroupBySequential();
 		
 		
-		//  c) Der Stream mit Verzweigung und mit Parallelit�t
+		//  c) Der Stream mit Verzweigung und mit Parallelitaet
 		instance.c_flapMapGroupByParallelObserveOn();
 		
 	}
@@ -68,9 +71,8 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 	/*
 	 * Sequentielle Version des flatMap und groupBy Ansatzes.
 	 * 
-	 * Verzweigte Version des Streams in a), ohne Parallelit�t. Die Laufzeit ist �hnlich.
-	 *  
-	 * Auch hier wir f�r jedes der 100 Elemente eine CPU-Intensive Methode aufgerufen, die ca. 100 Millisekunden l�uft.
+	 * Verzweigte Version des Streams in a), ohne Parallelitaet. Die Laufzeit ist aehnlich.
+	 * fuer jedes der 100 Elemente eine CPU-Intensive Methode aufgerufen, die ca. 100 Millisekunden laeuft.
 	 * Die Laufzeit des Algorithmus ist ca. 10 Sekunden. 
 	 */
 	void b_flapMapGroupBySequential() {
@@ -167,7 +169,8 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 	/*
 	 * This method runs  
 	 * runtimeInMillis
-	 * Milliseconds on a CPU without blocking, then it returns.
+	 * Milliseconds, then it returns.
+	 * CAVEAT: Returns even if the thread does not get enough CPU!
 	 */
 	private static void cpuIntesiveCall(long runtimeInMillis) {
 		 long start = System.currentTimeMillis();
@@ -185,6 +188,30 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 		 }
 	 }
 	
+	/*
+	 * Dieser Aufruf laueft ca. 100 Millisekunden auf (meiner) CPU 
+	 */
+	static void cpuIntensiveCall() {
+		long start = System.currentTimeMillis();
+		
+		long dummy = 2;
+		for(long counter = 0; counter <= Integer.MAX_VALUE / 5; counter ++) {
+				dummy = (dummy + dummy);
+				if (dummy > Integer.MAX_VALUE) {
+					dummy = dummy % Integer.MAX_VALUE;
+					
+				}
+				
+		}
+		
+		long runtime = System.currentTimeMillis() - start;
+		
+		//System.out.println("cpuIntensiveCall: runtime " + runtime + " Thread: " + Thread.currentThread());
+	}
+	
+	/*
+	 * Dieser Aufruf blockert seconds Sekunden.
+	 */
 	private void sleep(int seconds) {
 		try {
 			Thread.sleep(1000 * seconds);

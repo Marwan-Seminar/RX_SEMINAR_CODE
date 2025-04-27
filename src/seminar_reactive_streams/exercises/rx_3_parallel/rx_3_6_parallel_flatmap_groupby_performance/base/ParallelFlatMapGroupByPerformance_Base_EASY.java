@@ -6,26 +6,26 @@ import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 /* 
- * Hier wird gezeigt, dass durch die Parallelisierung mit Verzweigen und Zusammenf�rheren auf Basis 
+ * Hier wird gezeigt, dass durch die Parallelisierung mit Verzweigen und Zusammenfuerheren auf Basis 
  * von groupBy() und flatMap() ein signifikanter Performance-Vorteil erzielt werden kann.
  * 
- * Der Stream ruft im Map-Schritt eine CPU-intensive Funtktion auf, die ca. 100 Millisekunden lang l�uft.
+ * Der Stream ruft im Map-Schritt eine CPU-intensive Funtktion auf, die ca. 100 Millisekunden lang laeuft.
  * 
  * Durch die Parallelisierung soll es Ihnen gelingen, die Laufzeit ca. um den Faktor 4 auf einem Quadcore zu verringern.
  *  
  * --->>> Wenn Sie es sich leicht machen wollen, arbeiten Sie nur in Teil c. <<<---  
  *  
- * Ansonsten: Gliedern Sie die L�sung in drei Teile:
+ * Ansonsten: Gliedern Sie die Loesung in drei Teile:
  * 
  * a) 	Der sequentielle Stream ohne Verzweigung (ca. 10 Sekunden Laufzeit). 
  * 		Dieser Teil liegt schon fertig vor, in a_serialStream()
  * 
- * b) 	Der Stream mit Verzweigung aber ohne Parallelit�t (ca. 10 Sekunden Laufzeit).
- *  	Dieser Teil liegt als Ger�st vor, in b_flapMapGroupBySequential()
+ * b) 	Der Stream mit Verzweigung aber ohne Parallelitaet (ca. 10 Sekunden Laufzeit).
+ *  	Dieser Teil liegt als Geruest vor, in b_flapMapGroupBySequential()
  * 
- * c) 	Der Stream mit Verzweigung und mit Parallelit�t (ca. 2 Sekunden Laufzeit).
+ * c) 	Der Stream mit Verzweigung und mit Parallelitaet (ca. 2 Sekunden Laufzeit).
  *  	Dieser Teil liegt weitgehend fertig vor in c_flapMapGroupByParallelObserveOn(),
- *   	Sie m�ssen lediglich die Parallelit�t einbauen.
+ *   	Sie muessen lediglich die Parallelitaet einbauen.
  */
  public class ParallelFlatMapGroupByPerformance_Base_EASY {
 	
