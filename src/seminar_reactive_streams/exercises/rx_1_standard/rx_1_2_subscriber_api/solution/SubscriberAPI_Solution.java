@@ -15,7 +15,7 @@ import io.reactivex.rxjava3.core.Flowable;
  * 
  * b) Subscribieren Sie Ihren Subscriber an ein RxJava Flowable.range(1,100)
  * 
- * c) Zeigen Sie durch Shell-Ausgaben, wann welche Methoden aufgerufen werden. 
+ * c) Zeigen Sie durch Shell-Ausgaben, wann welche Subscriber Methoden aufgerufen werden. 
  * 
  * HINWEIS: 
  * 	- Sie muessen sich die Subscription "merken", die im onSubscribe() Aufruf uebergeben wird
@@ -56,7 +56,7 @@ class MySimpleSubscriber implements Subscriber<Integer> {
 	@Override
 	public void onSubscribe(Subscription subscription) {
 		
-		System.out.println("MySimpleSubscriber.onSubscribe(): " + subscription.getClass());
+		System.out.println("MySimpleSubscriber.onSubscribe(): Subscription: " + subscription.getClass());
 		
 		// TODO Subscription merken, so dass Elemnte angefordert werden k�nnen
 		this.subscription = subscription;
