@@ -5,7 +5,7 @@ import io.reactivex.rxjava3.core.Flowable;
 
 
 /*
- * Schreiben Sie eine Source f�r einen Stream ohne Back-Pressure.
+ * Schreiben Sie eine Source fuer einen Stream ohne Back-Pressure.
  * 
  * a)	Schreiben Sie die Stream-Source mit Flowable.create(), der die Zahlen 1 bis 1_000_000 emittiert.
  * 
@@ -20,9 +20,9 @@ import io.reactivex.rxjava3.core.Flowable;
  * 
  * 
  *  b) 	Zeigen Sie, dass diese Source  keinen Back-Pressure realisiert, 
- * 		selbst wenn Sie einen Parameter f�r die BackpressureStrategy �bergeben. 
+ * 		selbst wenn Sie einen Parameter fuer die BackpressureStrategy uebergeben. 
  * 
- * Lernziel: Stream Source ohne Back-Pressure erzeugen k�nnen
+ * Lernziel: Stream Source ohne Back-Pressure erzeugen koennen
  */
 public class GenaratorNoBackpressure_Base {
 
@@ -54,11 +54,11 @@ public class GenaratorNoBackpressure_Base {
 		//  <T> Flowable<T> create(FlowableOnSubscribe<T> source, BackpressureStrategy mode
 		// public interface FlowableOnSubscribe<T> { void subscribe( FlowableEmitter<T> emitter)}
 	
-		// TODO �bergeben Sie ein Lambda, das in einer Schleife auf dem emitter die Methode
-		// onNext() aufruft, um Daten in den STream zu pushen. 
+		// TODO uebergeben Sie ein Lambda, das in einer Schleife auf dem emitter die Methode
+		// onNext() aufruft, um Daten in den Stream zu pushen. 
 		Flowable<Integer> source = null; // Flowable.create(emitter -> { ...emitter.onNExt() ...
 		
-		// Einen Subsciber anmelden
+		// Einen Subscriber anmelden
 		source.subscribe(nextElement -> {
 			System.out.println("Subscriber received onNext() Element: " +  nextElement);
 		});
@@ -67,7 +67,7 @@ public class GenaratorNoBackpressure_Base {
 	
 	/*
 	 *  b) 	Zeigen Sie, dass diese Source  keinen Back-Pressure realisiert, 
-	 *  	selbst wenn Sie einen Parameter f�r die BackpressureStrategy �bergeben. 
+	 *  	selbst wenn Sie einen Parameter furr die BackpressureStrategy uebergeben. 
 	 *  
 	 *  Im Shell-Output wird sichtbar, dass der Erzeuger und der Subscriber immer
 	 *  weiter auseinander laufen.

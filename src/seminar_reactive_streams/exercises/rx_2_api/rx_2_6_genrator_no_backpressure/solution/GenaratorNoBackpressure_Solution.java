@@ -35,10 +35,10 @@ public class GenaratorNoBackpressure_Solution {
 		GenaratorNoBackpressure_Solution instance = new GenaratorNoBackpressure_Solution();
 		
 		// a)
-		instance.a_createStreamSource();
+		//instance.a_createStreamSource();
 		
 		// b) 
-		//instance.b_noBackpressureAvailable();
+		instance.b_noBackpressureAvailable();
 		
 		// keep the program running
 		sleep(100000);
@@ -78,7 +78,7 @@ public class GenaratorNoBackpressure_Solution {
 	 *  	selbst wenn Sie einen Parameter fuer die BackpressureStrategy uebergeben. 
 	 *  
 	 *  Im Shell-Output wird sichtbar, dass der Erzeuger und der Subscriber immer
-	 *  weiter auseinander laufen.
+	 *  weiter auseinander laufen, da hier der Subscriber verlangsamt ist. 
 	 */
 	void b_noBackpressureAvailable() {
 		
@@ -97,7 +97,7 @@ public class GenaratorNoBackpressure_Solution {
 		// Entkoppung der Downstream-Pipeline
 		source = source.observeOn(Schedulers.computation());
 		
-		// Langsamer Subscriber: Im Shell
+		// Langsamer Subscriber: 
 		source.subscribe(nextElement -> {
 			System.out.println("Subscriber received onNext() Element: " +  nextElement);
 			cpuIntensiveLoop(1);
