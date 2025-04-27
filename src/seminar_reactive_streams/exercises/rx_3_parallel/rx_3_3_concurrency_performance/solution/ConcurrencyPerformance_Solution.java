@@ -4,14 +4,14 @@ import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 /*
- * Zeigt das Verhalten von observeOn(), mit dem Ziel die PErformance eines Streams durch Asynchronit�t zu erh�hen.
+ * Zeigt das Verhalten von observeOn(), mit dem Ziel die Performance eines Streams durch Asynchronitaet zu erhoehen.
  * 
- * F�lle:
+ * Faelle:
  * 
  * 1. Sequentielle Pipeleine
- * 2. Asynchrone Pipeleine mit observeOn(): Die Stufen der Pipeline werden asynchron zueinander ausgef�hrt
+ * 2. Asynchrone Pipeleine mit observeOn(): Die Stufen der Pipeline werden asynchron zueinander ausgefuehrt
  * 3. Performance: Langlaufende Auufgaben in den Stufen: Mit entkopplung durch observeOn() schneller als sequenitell
- * 		(hier muss die Zeile einkommentiert werden, die mit TODO markiert ist, um die Nebenl�ufigkeit zu aktivieren.)
+ * 		(hier muss die Zeile einkommentiert werden, die mit TODO markiert ist, um die Nebenlaeufigkeit zu aktivieren.)
  */
 public class ConcurrencyPerformance_Solution {
 
@@ -24,7 +24,7 @@ public class ConcurrencyPerformance_Solution {
 		// 1. Sequentielle Pipeleine
 		//instance.sequentialPipeline();
 		
-		// 2. Asynchrone Pipeleine mit observeOn(): Die Stufen der Pipeline werden asynchron zueinander ausgef�hrt
+		// 2. Asynchrone Pipeleine mit observeOn(): Die Stufen der Pipeline werden asynchron zueinander ausgefuehrt
 		//instance.asynchronousPipeline();
 		
 		// 3. Performance durch observeOn(): Langlaufende Aufgaben in den Stufen: Mit Entkopplung durch observeOn() schneller als sequenitell

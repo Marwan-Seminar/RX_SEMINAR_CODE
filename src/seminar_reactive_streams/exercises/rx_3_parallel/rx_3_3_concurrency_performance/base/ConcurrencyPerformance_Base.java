@@ -3,7 +3,7 @@ package seminar_reactive_streams.exercises.rx_3_parallel.rx_3_3_concurrency_perf
 import io.reactivex.rxjava3.core.Observable;
 
 /*
- * RX 3.3 Performance durch Nebenl�ufigkeit
+ * RX 3.3 Performance durch Nebenlaeufigkeit
  * Stream durch observeOn() beschleunigen
  * 
  * Erzeuge Sie einen Stream, mit lang laufenden Stream-Stufen.
@@ -16,14 +16,14 @@ import io.reactivex.rxjava3.core.Observable;
  * Gehen Sie dann in folgenden zwei Schritten vor:
 
  * 
- * a) 	Sorgen Sie daf�r, dass die beiden Map-Stufen asynchron zueinander ausgef�hrt werden.
+ * a) 	Sorgen Sie dafuer, dass die beiden Map-Stufen asynchron zueinander ausgefuehrt werden.
  *  	Zeigen Sie das durch Shell-Ausgaben, die die jeweiligen Threads ausgeben.
- *  	�sungshinweis: observeOn(Scheduler.computing()) 
+ *  	Loesungshinweis: observeOn(Scheduler.computing()) 
  * 
- * b)	F�gen Sie in beide Map-Stufen eine langlaufende Funktion ein, und zeigen Sie,
+ * b)	Fuegen Sie in beide Map-Stufen eine langlaufende Funktion ein, und zeigen Sie,
  * 		dass die asynchrone Version schneller ist, als die sequentielle.
  *  	Wie viel schneller kann sie werden?
- *  	Hinweis: Sie k�nnen die langlaufende Funktion cpuIntesiveCall() aus der Musterl�sung verwenden.
+ *  	Hinweis: Sie koennen die langlaufende Funktion cpuIntesiveCall() aus der Musterloesung verwenden.
  * 
  * Lernziel: Erkennen, dass eine asynchroner Stream einen Performance-Vorteil bieten kann  
  */
@@ -44,10 +44,10 @@ public class ConcurrencyPerformance_Base {
 
 
 	/*
-	 * Diese Methode enth�lt eine sequentiellen Stream mit zwei Map-Stufen und eine Zeitmessung
+	 * Diese Methode enthaelt eine sequentiellen Stream mit zwei Map-Stufen und eine Zeitmessung
 	 * 
-	 * TODO 1: An der richtigen Stelle .observeOn(Schedulers.computation()) einf�gen
-	 * TODO 2: In den Map-Calls eine langlaufende Funtkion einf�gen, z.b. cpuIntesiveCall(100)
+	 * TODO 1: An der richtigen Stelle .observeOn(Schedulers.computation()) einfuegen
+	 * TODO 2: In den Map-Calls eine langlaufende Funtkion einfuegen, z.b. cpuIntesiveCall(100)
 	 * TODO 3: Zeigen, dass der Stream mit observeOn() schneller ist als ohne.
 	 */
 	void sequentialPipeline() {
@@ -89,6 +89,7 @@ public class ConcurrencyPerformance_Base {
 	 * This method runs  
 	 * runtimeInMillis
 	 * Milliseconds on a CPU without blocking, then it returns.
+	 * (CAVEAT: in case of preemption this method is not accurate, as even in preempted Threads the method will return after the specified period)
 	 */
 	 static void cpuIntesiveCall(long runtimeInMillis) {
 		 long start = System.currentTimeMillis();
