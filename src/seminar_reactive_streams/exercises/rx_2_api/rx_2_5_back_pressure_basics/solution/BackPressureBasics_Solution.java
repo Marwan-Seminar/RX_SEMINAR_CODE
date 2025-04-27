@@ -9,18 +9,18 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 /*
  * Zeigen Sie, wie Back-Pressure das Verhalten eines Streams ver�ndert
  * 
- * Programmieren Sie daf�r  einen Stream mit folgenden Eigenschaften
+ * Programmieren Sie dafuer  einen Stream mit folgenden Eigenschaften
  * - Stream Source erzeugt Integers 1 ... 100_000_000
  * - map() - Schritt bearbeitet die Daten
  * - observeOn() entkoppelt map() vom Subscriber
  * - Subscriber anmelden. Dieser ist langsamer als der Erzeuger (z.B. durch Thread.sleep())
- * - F�gen Sie Shell-Ausschriften ein, um das Verhalten von map() und onNext() zu zeigen.
+ * - Fuegen Sie Shell-Ausschriften ein, um das Verhalten von map() und onNext() zu zeigen.
  * 
  * a) 	Die Stream Source ist ein Observable.
  *  	Zeigen Sie, dass Source und Subscriber beliebig weit auseinanderlaufen.
  * 
  * b) 	Die Stream Source ist ein Flowable.
- * 		Zeigen Sie, dass Source und Subscriber nur geringf�gig auseinander laufen, n�mlich nie weiter als 128 Elemente.
+ * 		Zeigen Sie, dass Source und Subscriber nur geringfuegig auseinander laufen, naemlich nie weiter als 128 Elemente.
  * 
  * Lernziel: Verhalten von Back-Pressure verstehen 
  *
