@@ -5,14 +5,14 @@ import io.reactivex.rxjava3.core.Observable;
 /*
  * Bauen Sie einen einfachen Stream mit Observable oder Flowable als Source. 
  * 
- * a) Diese Source versendet die Zahlen 1-100, ein Subscriber empf�ngt sie, und schreibt sie auf die Konsole
+ * a) Diese Source versendet die Zahlen 1-100, ein Subscriber empfaengt sie, und schreibt sie auf die Konsole
  * 
  * b) Bauen Sie mehrere Stufen in den Stream ein, nutzen Sie map() um die Quadratzahlen zu bilden filter() um die geraden Quadratzahlen zu finden
  * 
- * c) Addieren Sie die Zahlen von 1-100, nutzen Sie daf�r reduce()
+ * c) Addieren Sie die Zahlen von 1-100, nutzen Sie dafuer reduce()
  * 
  * 
- * L�sungshinweis
+ * Loesungshinweis
  *  	Flowable.range()
  *  	  map(i -> i / 2)
  *  	  filter (i -> (i%2) == 0)
@@ -62,7 +62,7 @@ public class SimpleStream_Base {
 		
 		System.out.println("SimpleStream_Base.b_simpleStreamSquares()");
 		
-		// TODO 1. Datenquellen k�nnen Flowable oder Observable sein, z.B.: Flowable.range(0, 100)
+		// TODO 1. Datenquellen koennen Flowable oder Observable sein, z.B.: Flowable.range(0, 100)
 				
 		// TODO 2. map() bildet Elemente des Streams ab
 		
@@ -74,7 +74,7 @@ public class SimpleStream_Base {
 	}
 	
 	/*
-	 *  c) Addieren Sie die Zahlen von 1-100, nutzen Sie daf�r reduce()
+	 *  c) Addieren Sie die Zahlen von 1-100, nutzen Sie dafuer reduce()
 	 */
 	void c_simpleStreamSumOneToHundred() {
 		

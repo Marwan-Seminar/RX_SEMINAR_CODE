@@ -8,10 +8,10 @@ import io.reactivex.rxjava3.observables.GroupedObservable;
  * Teilen Sie einen Stream mittels groupBy() in Gruppen auf, und verarbeiten Sie die Elemente dieser Gruppen.
  * (Das ist in Isolation zwar nicht sinnvoll, aber es erleichtert das Verst�ndnis von groupBy())
  * 
- * Schrittweise L�sung
+ * Schrittweise Loesung
  * 
  * - Gruppieren Sie diese Elemente eines Streams mit groupBy(i -> i% 4) in vier Gruppen
- * - F�hren Sie eine triviale map-Operation auf den Elementen jeder Gruppe aus, z.B: map(i -> i)
+ * - Fhren Sie eine triviale map-Operation auf den Elementen jeder Gruppe aus, z.B: map(i -> i)
  * - Erzeugen Sie Shell-Output, der zeigt, dass jedes Element in genau einer Gruppe verarbeitet wird.
  * - Subskribieren Sie Dummy-Subscriber an den Gruppen
  * - Subskribieren Sie einen Subscriber an groupBy(), um den Ablauf zu starten

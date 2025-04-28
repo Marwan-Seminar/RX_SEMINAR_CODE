@@ -8,17 +8,17 @@ import io.reactivex.rxjava3.observables.GroupedObservable;
 
 /* Programmieren Sie einen Stream und gruppieren Sie dessen Daten mit groupBy() zu Gruppen.
  * Verarbeiten Sie jede dieser Gruppen.
- * F�gen Sie die Resultate mit flatMap() wieder zu einem einzigen Stream zusammen. 
+ * Fuegen Sie die Resultate mit flatMap() wieder zu einem einzigen Stream zusammen. 
  * 
- * Schrittweise L�sung
+ * Schrittweise Loesung
  * 
  * Erzeugen Sie mit Flowable.range(1,100) ein Flowable, das 100 Elemente emittiert.
  * Gruppieren Sie diese Elemente mit groupBy(i -> i% 4) in vier Gruppen
- * F�hren Sie eine triviale map-Operation auf den Elementen jeder Gruppe aus, z.B: map(i -> i)
- * Benutzen Sie flatMap() um die Gruppen wieder zusammenzuf�hren
+ * Fuehren Sie eine triviale map-Operation auf den Elementen jeder Gruppe aus, z.B: map(i -> i)
+ * Benutzen Sie flatMap() um die Gruppen wieder zusammenzufuehren
  * Erzeugen Sie Shell-Output, der zeigt, dass jedes Element in genau einer Gruppe verarbeitet wird.
  * 
- * Lernziel: Verzweigen und Zusammenf�hren als Basis f�r die Parallelisierung von Streams kennen 
+ * Lernziel: Verzweigen und Zusammenfuehren als Basis fuer die Parallelisierung von Streams kennen 
  * 
  */
 public class FlatMapGroupBy_Solution {
@@ -71,7 +71,7 @@ public class FlatMapGroupBy_Solution {
 	}
 	
 	/*
-	 * Wie a) aber mit explizit typisierten Variablen f�r die Observables in der Pipeline
+	 * Wie a) aber mit explizit typisierten Variablen fuer die Observables in der Pipeline
 	 */
 	void b_flapMapGroupByExplicitTypes() {
 
