@@ -64,7 +64,7 @@ public class MultipleSubscribersStream_Base {
 		// TODO:  Turn on Multithreading subscribeOn(...);
 		
 		// TODO: 1. Subscriber
-		sourceObservable.subscribe();
+		sourceObservable.subscribe(/* TODO Lambda within Subscriber */);
 		
 		// TODO: 2. Subscriber
 		
