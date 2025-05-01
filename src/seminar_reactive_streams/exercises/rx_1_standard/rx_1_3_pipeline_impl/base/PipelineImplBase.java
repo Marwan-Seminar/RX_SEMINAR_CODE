@@ -28,7 +28,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 		
  * 		Beheben sie dies durch Nutzung eines Executors (das ist ein Thread-Pool)
  * 
- * b) 	In der Methode MySipleSubscriber.onNext(Integer item) wird bei jedem Aufruf nur ein einziges Element �ber den Aufruf request(1) angefordert.
+ * b) 	In der Methode MySipleSubscriber.onNext(Integer item) wird bei jedem Aufruf nur ein einziges Element uesber den Aufruf request(1) angefordert.
  * 		Dies wiederpricht der Empfehlung aus Regel 1.1, da es ein sogenanntes Stop-And-Wait Protokoll implementiert, was nicht effizient ist.
  * 		
  * 		Beheben Sie dies, indem Sie einen Batch neuer Items bestellen (request(BUFFER_SIZE)).

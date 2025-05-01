@@ -58,7 +58,7 @@ class MySimpleSubscriber implements Subscriber<Integer> {
 		
 		System.out.println("MySimpleSubscriber.onSubscribe(): Subscription: " + subscription.getClass());
 		
-		// TODO Subscription merken, so dass Elemnte angefordert werden k�nnen
+		// TODO Subscription merken, so dass Elemnte angefordert werden koennen
 		this.subscription = subscription;
 		
 		// TODO Das erste Element anfordern

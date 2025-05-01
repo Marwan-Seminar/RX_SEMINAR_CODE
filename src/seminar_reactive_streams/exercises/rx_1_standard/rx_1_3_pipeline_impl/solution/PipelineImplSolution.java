@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  *  Alle drei Interfaces, Publisher, Subscriber, Subscription sind hier prototypisch implementiert.
  *  Sie folgen jedeoch nicht komplett dem erforderlichen Regelwerk.
  *  
- *  Diese Implemntierung dient nur zur Demonstration der Bezieuhungen unter den Interfaces, 
+ *  Diese Implemntierung dient nur zur Demonstration der Bezieungen unter den Interfaces, 
  *  die es ermoeglichen eine Pipeline daraus zu bauen.
  *  
  *  see: JDK Example in concurrent.Flow Javadoc
